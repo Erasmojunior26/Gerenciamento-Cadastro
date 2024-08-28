@@ -1,0 +1,156 @@
+﻿@model IEnumerable<Formulario.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<hr />
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAvm4zPPmO_MBPeAqzedZOxW6aWj3lk_MX4A&usqp=CAU" class="img-fluid" alt="Imagem responsiva">
+        <h1 class="jumbotron-heading">Mundo SENAI: Explorando o Futuro da Tecnologia Estudantil</h1>
+        <p class="lead text-muted">O Mundo SENAI é um evento anual dedicado a inspirar e capacitar estudantes interessados no vasto e dinâmico universo da tecnologia. Este evento reúne alunos, professores, profissionais do setor e entusiastas da inovação para um dia repleto de aprendizado, networking e descoberta..</p>
+        <p>
+            <a asp-action="Create" class="btn btn-primary my-2">Inscreva-se</a>
+        </p>
+    </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <h1>Teste</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">No MUNDO SENAI, a tecnologia é o coração pulsante que impulsiona a inovação e a eficiência. Em nossa seção dedicada à tecnologia, exploramos as ferramentas e soluções mais avançadas que estão moldando o cenário industrial global. Desde a Inteligência Artificial e o Machine Learning até a Internet das Coisas (IoT) e a Robótica, apresentamos as tecnologias mais recentes e suas aplicações práticas no setor</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a type="button" asp-action="Create" class="btn btn-sm btn-outline-secondary">Inscreva-se</a>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                        <p class="card-text">A inovação é o motor que dirige o MUNDO SENAI, e nossa abordagem para fomentar ideias disruptivas é o que distingue este evento. A seção de inovação do projeto é dedicada a apresentar as mais recentes tendências e práticas inovadoras que estão transformando o mundo dos negócios e da tecnologia. Através de sessões interativas, painéis de discussão e exposições de projetos inovadores.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a type="button" asp-action="Create" class="btn btn-sm btn-outline-secondary">Inscreva-se</a>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">A aprendizagem é um pilar essencial que promove o desenvolvimento contínuo e a capacitação de profissionais e estudantes. Nossa abordagem de aprendizagem é projetada para oferecer uma formação robusta e prática, alinhada com as necessidades do mercado atual. Oferecemos uma ampla gama de cursos, workshops e treinamentos especializados que cobrem as últimas tendências e habilidades requeridas no setor industrial.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a type="button" asp-action="Create" class="btn btn-sm btn-outline-secondary">Inscreva-se</a>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nascimentoUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contatoUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emailUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cepUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.enderecoUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numeroUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.complementoUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bairroUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cidadeUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ufUsuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nascimentoUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contatoUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cepUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.enderecoUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numeroUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.complementoUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bairroUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cidadeUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ufUsuario)
+            </td>
+            <td>
+                    <a asp-action="Edit" class="btn btn-outline-warning" asp-route-id="@item.idUsuario">Editar</a>
+                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.idUsuario">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

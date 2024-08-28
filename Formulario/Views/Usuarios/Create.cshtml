@@ -1,0 +1,216 @@
+﻿@model Formulario.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://www.mundosenai.com.br/static/novomundosenai/imgs/logo-senai-topo.svg" alt="" width="72" height="72">
+        <h2>Cadastro Mundo Senai</h2>
+        <p class="lead">Insira suas informações para se cadastrar no evento Mundo Senai 2024</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Eventos da oficina</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Oficina de Prototipagem Rápida</h6>
+                <small class="text-muted"> Uma oficina prática onde os participantes aprenderão técnicas de prototipagem rápida usando materiais simples e acessíveis</small>
+              </div>
+              <span class="text-muted">29/09</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Palestra com Empreendedores Locais</h6>
+                <small class="text-muted">Uma palestra inspiradora com empreendedores locais que tenham experiência em inovação e educação.</small>
+              </div>
+              <span class="text-muted">30/09</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Sessão de Design Thinking para Educadores</h6>
+                <small class="text-muted">Uma introdução prática ao Design Thinking, focada em como os educadores podem aplicar esse método para resolver problemas e melhorar processos dentro da sala de aula.</small>
+              </div>
+              <span class="text-muted">01/10</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Amostra de tecnologias</h6>
+                <small>Tudo de mais inovador e tecnológico que existe no mercado em um só lugar</small>
+              </div>
+              <span class="text-success">29/09 a 02/10</span>
+            </li>
+          </ul>
+        </div>
+        <form asp-action="Create" class="col-md-8 order-md-1">
+          <h4 class="mb-3">Cadastro novo aluno</h4>
+          <div class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="primeiroNome">Nome</label>
+                <input asp-for="nomeUsuario" class="form-control" />
+                        <span asp-validation-for="nomeUsuario" class="text-danger"></span>
+                <div class="invalid-feedback">
+                  É obrigatório inserir um nome válido.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label asp-for="nascimentoUsuario" class="control-label"></label>
+                <input asp-for="nascimentoUsuario" class="form-control" required/>
+                        <span asp-validation-for="nascimentoUsuario" class="text-danger"></span>
+                <div class="invalid-feedback">
+                  É obrigatório inserir uma data de nascimento válida.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="nickname">Contato</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">=</span>
+                </div>
+                <input asp-for="contatoUsuario" class="form-control" required/>
+                        <span asp-validation-for="contatoUsuario" class="text-danger"></span>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Seu contato é obrigatório.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input asp-for="emailUsuario" type="email" class="form-control" id="email" placeholder="fulano@exemplo.com">
+                    <span asp-validation-for="emailUsuario" class="text-danger"></span>
+              <div class="invalid-feedback">
+                Por favor, insira um endereço de e-mail válido, para atualizações de entrega.
+              </div>
+            </div>
+
+                <hr class="mb-4">
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="cidade">Cidade</label>
+                        <input asp-for="cidadeUsuario" class="form-control" id="cidade"/>
+                        <span asp-validation-for="cidadeUsuario" class="text-danger"></span>
+                        <div class="invalid-feedback">
+                            Por favor, escolha uma cidade válida.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="estado">UF</label>
+                        <select asp-for="ufUsuario" class="custom-select d-block w-100" id="estado" required>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, insira um estado válido.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cep">CEP</label>
+                        <input asp-for="cepUsuario" type="text" class="form-control" id="cep" placeholder="">
+                        <span asp-validation-for="cepUsuario" class="text-danger"></span>
+                        <div class="invalid-feedback">
+                            É obrigatório inserir um CEP.
+                        </div>
+                    </div>
+                </div>
+
+            <div class="mb-3">
+              <label for="endereco">Endereço</label>
+              <input asp-for="enderecoUsuario" type="text" class="form-control" id="logradouro" placeholder="Rua dos bobos" required>
+                    <span asp-validation-for="enderecoUsuario" class="text-danger"></span>
+              <div class="invalid-feedback">
+                Por favor, insira seu endereço.
+              </div>
+            </div>
+
+            <div class="mb-3">
+                    <label for="numero">Numero</label>
+                    <input asp-for="numeroUsuario" type="text" class="form-control" id="numero" placeholder="nº 999" required>
+                    <span asp-validation-for="numeroUsuario" class="text-danger"></span>
+                    <div class="invalid-feedback">
+                        Por favor, insira seu número
+                    </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="complemento">Complemento <span class="text-muted">(Opcional)</span></label>
+              <input asp-for="complementoUsuario" type="text" class="form-control" id="complemento" placeholder="Apartamento ou casa">
+                    <span asp-validation-for="complementoUsuario" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                    <label for="bairro">Bairro</label>
+                    <input asp-for="bairroUsuario" type="text" class="form-control" id="bairro" placeholder="Bairro capuã" required>
+                    <span asp-validation-for="bairroUsuario" class="text-danger"></span>
+                    <div class="invalid-feedback">
+                        Por favor, insira seu bairro
+                    </div>
+            </div>   
+            <hr class="mb-4">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="salvar-info">
+              <label class="custom-control-label" for="salvar-info">Lembrar desta informação, na próxima vez.</label>
+            </div>
+            
+
+            <input class="btn btn-primary btn-lg btn-block" value="Cadastre-se" type="submit"></input>
+          </div>
+        </form>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2024 Mundo SENAI</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacidade</a></li>
+          <li class="list-inline-item"><a href="#">Termos</a></li>
+          <li class="list-inline-item"><a href="#">Suporte</a></li>
+        </ul>
+      </footer>
+    </div>
+
+
+
+
+<div>
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
